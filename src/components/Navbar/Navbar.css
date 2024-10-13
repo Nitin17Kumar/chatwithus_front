@@ -1,0 +1,96 @@
+/* Navbar styles */
+.navbar {
+  height: 60px; 
+  background-color: #0c1a29; 
+  color: white; 
+  display: flex; 
+  padding: 0 20px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  position: relative; 
+  z-index: 10; 
+  align-items: center; /* Center items vertically */
+  justify-content: space-between;
+}
+
+/* Links styling */
+.navbar a {
+  color: white; 
+  text-decoration: none; /* Remove underline */
+  margin: 0 10px; /* Spacing between links */
+}
+
+/* Style buttons */
+.navbar button {
+  background-color: #ffffff; /* Button background color */
+  border: 1px solid black; /* Border */
+  color: rgb(0, 0, 0); /* Text color */
+  cursor: pointer; /* Pointer cursor for buttons */
+  font-size: 14px; /* Font size */
+  border-radius: 4px; /* Rounded corners */
+  margin-left: 10px; /* Space between buttons */
+  padding: 8px 12px; /* Add padding for a better look */
+}
+
+/* Button hover effect */
+.navbar button:hover {
+  background-color: #e6e6e6; /* Darker background on hover */
+  opacity: 0.8; /* Slightly dim on hover */
+}
+
+/* Align buttons to the right */
+.right {
+  display: flex; /* Use flexbox for action buttons */
+  align-items: center; /* Center buttons vertically */
+  justify-content: space-around;
+}
+
+/* Style for the toggle button */
+.toggle-button {
+  background: none; /* Remove default button styling */
+  border: none; /* Remove border */
+  color: white; /* Icon color */
+  cursor: pointer; /* Pointer cursor */
+  font-size: 20px; /* Icon size */
+  display: none; /* Hidden by default */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .toggle-button {
+    display: block; /* Show toggle button on small screens */
+  }
+
+  .right {
+    display: none; /* Hide buttons by default on small screens */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-start; /* Align buttons to the left */
+    width: 100%; /* Full width */
+    position: absolute; /* Position the dropdown */
+    top: 60px; /* Position it just below the navbar */
+    left: 0; /* Align it to the left */
+    background-color: #0c1a29; /* Match navbar background */
+    z-index: 1; /* Ensure it appears above other content */
+    padding: 10px 0; /* Padding around buttons */
+  }
+
+  .right.visible {
+    display: flex; /* Show buttons when toggled */
+  }
+
+  .right button {
+    width: 100%; /* Make buttons full width */
+    margin: 5px 0; /* Add spacing between buttons */
+  }
+}
+
+/* Media query for very small devices */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 5px; /* Further adjust padding */
+  }
+
+  .navbar button {
+    font-size: 12px; /* Smaller font size for buttons */
+    padding: 6px 10px; /* Adjust padding */
+  }
+}
