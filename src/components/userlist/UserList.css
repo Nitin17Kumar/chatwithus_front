@@ -1,20 +1,17 @@
-/* Container for the user list */
 .user-list {
-  width: 100%; /* Set width to 100% for better responsiveness */
-  max-width: 250px; /* Maintain a maximum width */
+  width: 100%; 
+  max-width: 250px;
   border-right: 1px solid #ccc;
   padding: 10px;
   overflow-y: auto;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for better appearance */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
-/* Title for the user list */
 .user-list h2 {
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-/* Each user item in the list */
 .user-item {
   cursor: pointer;
   padding: 8px;
@@ -23,32 +20,26 @@
   transition: background-color 0.2s ease-in-out;
 }
 
-/* Highlight selected user */
 .user-item.selected {
   background-color: #ffffff;
 }
 
-/* Hover effect for user items */
 .user-item:hover {
   background-color: #eae4e4;
 }
 
-/* Media query for smaller screens */
 @media (max-width: 768px) {
   .user-list {
-      max-width:20%; /* Full width on smaller screens */
-      border-right: none; /* Remove border on mobile */
-      border-bottom: 1px solid #ccc; /* Optional: Add bottom border */
+      max-width:20%; 
+      border-right: none; 
+      border-bottom: 1px solid #ccc; 
   }
   
-  /* Adjust title font size */
   .user-list h2 {
-      font-size: 18px; /* Smaller font size for mobile */
+      font-size: 18px; 
   }
-  
-  /* Adjust padding and margins for user items */
   .user-item {
-      padding: 6px; /* Reduced padding */
-      margin-bottom: 2px; /* Reduced margin */
+      padding: 6px; 
+      margin-bottom: 2px;
   }
 }

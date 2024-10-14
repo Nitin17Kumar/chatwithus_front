@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './Settings.css'; // Import CSS file for styling
-import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
+import './Settings.css'; 
+import { useNavigate } from 'react-router-dom'; 
 
 function Settings() {
   const [userDetails, setUserDetails] = useState({
@@ -11,12 +11,11 @@ function Settings() {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [loading, setLoading] = useState(false);
-  const [isOpen, setIsOpen] = useState(true); // State to manage visibility
-  const userId = localStorage.getItem('userId'); // Get user ID from localStorage
-  const settingsRef = useRef(null); // Ref for settings container
-  const navigate = useNavigate(); // Create navigate function
-
-  // Fetch user details on component mount
+  const [isOpen, setIsOpen] = useState(true); 
+  const userId = localStorage.getItem('userId'); 
+  const settingsRef = useRef(null); 
+  const navigate = useNavigate(); 
+  
   useEffect(() => {
     const fetchUserDetails = async () => {
       setLoading(true);
@@ -32,7 +31,6 @@ function Settings() {
         }
 
         const data = await response.json();
-        console.log(data);
         setUserDetails(data);
       } catch (error) {
         setError(error.message);
@@ -50,7 +48,7 @@ function Settings() {
   };
 
   const validatePhoneNumber = (phoneNumber) => {
-    const regex = /^[0-9]{10}$/; // Simple regex for 10-digit phone numbers
+    const regex = /^[0-9]{10}$/; 
     return regex.test(phoneNumber);
   };
 
@@ -60,7 +58,6 @@ function Settings() {
     setSuccess('');
     setLoading(true);
 
-    // Validate phone number
     if (!validatePhoneNumber(userDetails.phoneNumber)) {
       setError('Phone number must be 10 digits long');
       setLoading(false);
@@ -83,8 +80,6 @@ function Settings() {
       }
 
       setSuccess('User details updated successfully!');
-      
-      // Redirect after a timeout
       setTimeout(() => navigate('/dashboard'), 2000);
     } catch (error) {
       setError(error.message);
@@ -110,22 +105,20 @@ function Settings() {
         throw new Error(errorData.message || 'Failed to delete account');
       }
 
-      // Clear local storage and redirect
       localStorage.removeItem('token');
       localStorage.removeItem('userId');
       window.location.href = '/login'; 
+      navigate('/login');
     } catch (error) {
       setError(error.message);
     }
   };
 
-  // Close settings when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (settingsRef.current && !settingsRef.current.contains(event.target)) {
-        console.log('Clicked outside settings');
-        setIsOpen(false); // Close the settings
-        navigate('/dashboard'); // Navigate to the dashboard
+        setIsOpen(false); 
+        navigate('/dashboard'); 
       }
     };
 
@@ -133,9 +126,8 @@ function Settings() {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [navigate]); // Add navigate to the dependency array
+  }, [navigate]); 
 
-  // Render nothing if settings are closed
   if (!isOpen) return null;
 
   return (

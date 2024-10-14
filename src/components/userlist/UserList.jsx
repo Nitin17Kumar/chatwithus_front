@@ -1,12 +1,9 @@
 import React from 'react';
-import './UserList.css'; // Import the CSS file
+import './UserList.css'; 
 
 function UserList({ users, onUserClick, selectedUser }) {
-  // Retrieve the current user's ID from local storage
   const currentUserId = localStorage.getItem('userId');
 
-
-  // Filter out the current user from the list of users
   const filteredUsers = users.filter(user => user._id !== currentUserId);
 
   return (

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import './Login.css'; // Import the CSS file
+import './Login.css'; 
 
 function Login() {
   const [formData, setFormData] = useState({ email: '', password: '' });
-  const [error, setError] = useState(''); // State for error messages
-  const [loading, setLoading] = useState(false); // State for loading
+  const [error, setError] = useState(''); 
+  const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
   
   const changeHandler = (e) => {
@@ -33,16 +33,14 @@ function Login() {
       }
 
       const data = await response.json();
-      console.log(data);
-      // Assuming you receive a token in the response
       localStorage.setItem('token', data.token);
       localStorage.setItem('userId', data.id);
       navigate('/dashboard');
     } catch (error) {
       console.error('Error logging in:', error);
-      setError(error.message); // Set error message for display
+      setError(error.message); 
     } finally {
-      setLoading(false); // Reset loading state
+      setLoading(false); 
     }
   };
 
@@ -69,7 +67,7 @@ function Login() {
         <br/>  
         <br/>      
         <p>
-          Don't have an account? <Link to="/register">Register</Link> {/* Link to the register page */}
+          Don't have an account? <Link to="/register">Register</Link>
         </p>
       </form>
       

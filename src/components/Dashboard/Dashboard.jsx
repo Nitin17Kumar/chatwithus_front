@@ -4,7 +4,7 @@ import MessageSection from '../message/MessageSection';
 import Navbar from '../Navbar/Navbar';
 import Settings from '../setting/Setting';
 import { useNavigate } from 'react-router-dom';
-import './Dashboard.css'; // Import Dashboard CSS
+import './Dashboard.css'; 
 
 function Dashboard() {
   const [messages, setMessages] = useState([]);
@@ -23,7 +23,6 @@ function Dashboard() {
     navigate('/login');
   };
 
-  // Fetch users from the API
   const fetchUsers = async () => {
     const token = localStorage.getItem('token');
     if (!token) {
@@ -55,7 +54,6 @@ function Dashboard() {
     }
   };
 
-  // Fetch messages based on user ID
   const fetchMessages = async (userId) => {
     if (!userId) return;
 

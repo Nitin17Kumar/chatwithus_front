@@ -1,15 +1,13 @@
-/* Container for the registration form */
 .registration-form-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Full height */
-    background-color: #f4f7f8; /* Soft background color */
+    height: 100vh; 
+    background-color: #f4f7f8; 
     padding: 20px;
   }
   
-  /* Title Styling */
   .registration-form-title {
     font-size: 2rem;
     color: #333;
@@ -18,7 +16,6 @@
     text-align: center;
   }
   
-  /* Form Styling */
   .registration-form {
     background-color: white;
     padding: 30px;
@@ -28,12 +25,10 @@
     width: 100%;
   }
   
-  /* Form Group Styling */
   .form-group {
     margin-bottom: 15px;
   }
   
-  /* Label Styling */
   .form-label {
     display: block;
     margin-bottom: 8px;
@@ -42,7 +37,6 @@
     font-weight: 600;
   }
   
-  /* Input and Select Styling */
   .form-input, .form-select {
     width: 100%;
     padding: 10px;
@@ -53,13 +47,11 @@
     transition: border 0.3s ease;
   }
   
-  /* Input Focus Style */
   .form-input:focus, .form-select:focus {
-    border-color: #007bff; /* Blue outline on focus */
+    border-color: #007bff; 
     outline: none;
   }
   
-  /* Submit Button Styling */
   .form-submit-btn {
     width: 100%;
     padding: 12px;
@@ -72,18 +64,15 @@
     transition: background-color 0.3s ease;
   }
   
-  /* Submit Button Hover Effect */
   .form-submit-btn:hover {
     background-color: #0056b3;
   }
   
-  /* Disabled Button State */
   .form-submit-btn:disabled {
     background-color: #ddd;
     cursor: not-allowed;
   }
   
-  /* Message Styling */
   .form-message {
     margin-top: 15px;
     font-size: 1rem;
@@ -95,7 +84,6 @@
     color: red;
   }
   
-  /* Media Query for Mobile Responsiveness */
   @media (max-width: 600px) {
     .registration-form {
       padding: 20px;

@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import './Navbar.css'; // Import the CSS file
-import { FaCog, FaSignOutAlt, FaBars } from 'react-icons/fa'; // Import icons
+import './Navbar.css'; 
+import { FaCog, FaSignOutAlt, FaBars } from 'react-icons/fa'; 
 
 function Navbar({ setShowSettings, handleLogout }) {
-  const [showButtons, setShowButtons] = useState(false); // State to toggle button visibility
+  const [showButtons, setShowButtons] = useState(false); 
 
   const toggleButtonVisibility = () => {
-    setShowButtons(prev => !prev); // Toggle button visibility
+    setShowButtons(prev => !prev); 
   };
 
   return (
     <nav className="navbar">
       <h2>ChatWithUs</h2>
       <button className="toggle-button" onClick={toggleButtonVisibility}>
-        <FaBars /> {/* Hamburger icon */}
+        <FaBars />
       </button>
       <div className={`right ${showButtons ? 'visible' : ''}`}>
         <button onClick={() => setShowSettings(prev => !prev)}>
